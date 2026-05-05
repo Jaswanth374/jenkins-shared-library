@@ -13,7 +13,7 @@ def call(configMap) {
             component = configMap.get('component')
         }
         options {
-            //disableConcurrentBuilds()
+            disableConcurrentBuilds()
             timeout(time: 5, unit: 'MINUTES')
         }
          parameters {
