@@ -9,8 +9,8 @@ def call(configMap) {
             appVersion = ""
             acc_id = "665096241917"
             region = "us-east-1"
-            project = configMap.get(project)
-            component = configMap.get(component)
+            project = configMap.get('project')
+            component = configMap.get('component')
         }
         options {
             //disableConcurrentBuilds()
@@ -72,7 +72,7 @@ def call(configMap) {
                     withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
                         script {
                             def owner = 'jaswanth374'
-                            def repo  = 'catalogue-junit-tests'
+                            def repo  = "${component}-junit-tests"
 
                             def response = sh(
                                 script: """
